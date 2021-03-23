@@ -1,5 +1,5 @@
-function App() {
-  return <div>hello</div>;
-}
+const App: React.FC = () => {
+  return <div>hey</div>;
+};
 
 export default App;
