@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "editorconfig-checker": "^4.0.1",
@@ -56,6 +57,8 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react-layout-library": "^1.5.6",
+    "styled-components": "^5.2.1"
   }
 }
