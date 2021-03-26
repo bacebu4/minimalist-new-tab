@@ -14,14 +14,15 @@ type LinkElementProps = {
   link: Link;
 };
 
-const Title = withLayoutStyles(styled.h2`
+const LinkElementTitle = withLayoutStyles(styled.h2`
   font-size: 22px;
   font-family: "Sora", sans-serif;
 `);
 
-const Subtitle = styled.a`
+const LinkElementSubtitle = styled.a`
   color: #949494;
   font-size: 14px;
+  font-weight: 300;
 
   text-decoration: none;
 
@@ -40,9 +41,11 @@ const LinkElementLayout: React.FC<LinkElementProps> = ({ link }) => {
           src={getFaviconPath(link.url)}
           alt="favicon"
         />
-        <Title ml={8}>{link.title}</Title>
+        <LinkElementTitle ml={8}>{link.title}</LinkElementTitle>
       </FlexBox>
-      <Subtitle href={`https://${link.url}`}> {link.url} </Subtitle>
+      <LinkElementSubtitle href={`https://${link.url}`}>
+        {link.url}
+      </LinkElementSubtitle>
     </FlexBox>
   );
 };
