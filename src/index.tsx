@@ -1,7 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Modal from "react-modal";
 import App from "./App";
+
+Modal.setAppElement("#root");
+if (
+  Modal.defaultStyles &&
+  Modal.defaultStyles.overlay &&
+  Modal.defaultStyles.overlay.backgroundColor
+) {
+  Modal.defaultStyles.overlay.backgroundColor = "#0000005f";
+}
 
 ReactDOM.render(
   <React.StrictMode>
