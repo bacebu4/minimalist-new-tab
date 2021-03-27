@@ -12,6 +12,7 @@ function getFaviconPath(url: string): string {
 
 type LinkElementProps = {
   link: Link;
+  className?: string;
 };
 
 const LinkElementTitle = withLayoutStyles(styled.h2`
@@ -31,9 +32,9 @@ const LinkElementSubtitle = styled.a`
   }
 `;
 
-const LinkElementLayout: React.FC<LinkElementProps> = ({ link }) => {
+const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
   return (
-    <FlexBox direction="column">
+    <FlexBox direction="column" className={className}>
       <FlexBox ai="center" mb={4}>
         <img
           width={20}

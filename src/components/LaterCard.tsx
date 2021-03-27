@@ -4,6 +4,7 @@ import { LaterLink } from "../types";
 
 type LaterCardProps = {
   link: LaterLink;
+  className?: string;
 };
 
 const LaterCardWrapper = styled(FlexBox)`
@@ -32,9 +33,13 @@ const Image = styled.img`
   border-radius: 10px 0px 0px 10px;
 `;
 
-const LaterCardLayout: React.FC<LaterCardProps> = ({ link }) => {
+const LaterCardLayout: React.FC<LaterCardProps> = ({ link, className }) => {
   return (
-    <LaterCardWrapper padding="16px 24px 16px 16px" ai="center">
+    <LaterCardWrapper
+      padding="16px 24px 16px 16px"
+      ai="center"
+      className={className}
+    >
       <Image
         width={96}
         height={66}
