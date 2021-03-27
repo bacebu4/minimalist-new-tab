@@ -46,6 +46,7 @@
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "date-fns": "^2.19.0",
     "editorconfig-checker": "^4.0.1",
     "eslint": "^7.22.0",
     "eslint-config-airbnb": "^18.2.1",
