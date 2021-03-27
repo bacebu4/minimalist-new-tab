@@ -1,15 +1,17 @@
 import { FlexBox } from "react-layout-library";
 import { LaterCard } from "./components/LaterCard";
 import { LinkElement } from "./components/LinkElement";
+import { Settings } from "./components/Settings";
 import { Time } from "./components/Time";
 import { Weather } from "./components/Weather";
 
 const App: React.FC = () => {
   return (
     <>
-      <FlexBox jc="center" ai="center" h="100vh" direction="column">
-        <Weather />
+      <Weather />
+      <Settings />
 
+      <FlexBox jc="center" ai="center" h="100vh" direction="column">
         <Time />
         <LinkElement
           mt={32}
