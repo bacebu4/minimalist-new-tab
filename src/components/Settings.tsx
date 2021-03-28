@@ -43,11 +43,8 @@ const SettingsTitle = styled.h1`
 `;
 
 const SettingsUppercase = styled.h2`
-  margin-top: 32px;
-  color: ${GRAY};
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 16px;
 `;
 
 const SettingsExplanation = styled.p`
@@ -56,6 +53,10 @@ const SettingsExplanation = styled.p`
   line-height: 1.6rem;
   max-width: 80%;
   margin-top: 16px;
+`;
+
+const Section = styled.section`
+  margin-top: 44px;
 `;
 
 export const Settings: React.FC = () => {
@@ -77,19 +78,20 @@ export const Settings: React.FC = () => {
           <CloseButton onClick={() => setIsOpen(false)} />
         </FlexBox>
 
-        <Switch />
-
-        <section>
-          <SettingsUppercase>Saved links</SettingsUppercase>
+        <Section>
+          <FlexBox jc="space-between" ai="center" mb={16}>
+            <SettingsUppercase>Saved links</SettingsUppercase>
+            <Switch />
+          </FlexBox>
           <SettingsCard name="VK" />
           <SettingsCard name="VK" />
           <SettingsCard name="VK" />
           <SettingsExplanation>
             Saved links you see at the main screen
           </SettingsExplanation>
-        </section>
+        </Section>
 
-        <section>
+        <Section>
           <SettingsUppercase>Add new links (max. 6)</SettingsUppercase>
           <FlexBox mt={16}>
             <BaseInput placeholder="Title" />
@@ -100,7 +102,45 @@ export const Settings: React.FC = () => {
           <FlexBox mt={16}>
             <BaseButton>Add new one</BaseButton>
           </FlexBox>
-        </section>
+        </Section>
+
+        <Section>
+          <FlexBox jc="space-between" ai="center" mb={16}>
+            <SettingsUppercase>Weather API</SettingsUppercase>
+            <Switch />
+          </FlexBox>
+          <FlexBox mt={16}>
+            <BaseInput placeholder="Your weather API key here" />
+          </FlexBox>
+
+          <FlexBox mt={16}>
+            <BaseButton>Save</BaseButton>
+          </FlexBox>
+
+          <SettingsExplanation>
+            Go to the Weather website and get your key there and everything will
+            work! Trust me!
+          </SettingsExplanation>
+        </Section>
+
+        <Section>
+          <FlexBox jc="space-between" ai="center" mb={16}>
+            <SettingsUppercase>Pocket Integration</SettingsUppercase>
+            <Switch />
+          </FlexBox>
+          <FlexBox mt={16}>
+            <BaseInput placeholder="Your pocket API key here" />
+          </FlexBox>
+
+          <FlexBox mt={16}>
+            <BaseButton>Save</BaseButton>
+          </FlexBox>
+
+          <SettingsExplanation>
+            Go to the Pocket website and get your key there and everything will
+            work! Trust me!
+          </SettingsExplanation>
+        </Section>
       </Modal>
     </>
   );
