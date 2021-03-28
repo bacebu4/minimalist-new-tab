@@ -8,6 +8,7 @@ import { GRAY } from "../utils/colors";
 import { SettingsCard } from "./SettingsCard";
 import { BaseButton } from "./BaseButton";
 import { BaseInput } from "./BaseInput";
+import { Switch } from "./Switch";
 
 const customStyles = {
   content: {
@@ -75,6 +76,8 @@ export const Settings: React.FC = () => {
           <SettingsTitle>Settings</SettingsTitle>
           <CloseButton onClick={() => setIsOpen(false)} />
         </FlexBox>
+
+        <Switch />
 
         <section>
           <SettingsUppercase>Saved links</SettingsUppercase>
