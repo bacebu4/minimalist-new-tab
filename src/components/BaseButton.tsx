@@ -10,7 +10,7 @@ export const BaseButton = styled.button<BaseButtonProps>`
   flex: 1;
   padding: 12px 16px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 12px;
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;

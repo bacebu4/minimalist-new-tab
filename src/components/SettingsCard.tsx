@@ -9,7 +9,7 @@ type SettingsCardProps = {
 
 const CardWrapper = styled(FlexBox)`
   padding: 12px 16px;
-  border-radius: 16px;
+  border-radius: 9px;
   font-weight: 500;
   cursor: pointer;
 
