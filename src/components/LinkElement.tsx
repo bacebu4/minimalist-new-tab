@@ -18,15 +18,23 @@ type LinkElementProps = {
 };
 
 const LinkElementTitle = withLayoutStyles(styled.h2`
-  font-size: 22px;
+  font-size: 20px;
   font-family: "Sora", sans-serif;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
 `);
 
 const LinkElementSubtitle = styled.div`
   color: ${GRAY};
   font-size: 14px;
   font-weight: 300;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
   text-decoration: none;
 `;
 
@@ -50,12 +58,8 @@ const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
     >
       <FlexBox direction="column">
         <FlexBox ai="center" mb={4}>
-          <img
-            width={20}
-            height={20}
-            src={getFaviconPath(link.url)}
-            alt="favicon"
-          />
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <img width={20} height={20} src={getFaviconPath(link.url)} />
           <LinkElementTitle ml={8}>{link.title}</LinkElementTitle>
         </FlexBox>
         <LinkElementSubtitle>{link.url}</LinkElementSubtitle>

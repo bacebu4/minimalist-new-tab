@@ -18,24 +18,45 @@ const SettingsCardWrapper = styled(FlexBox)`
   }
 `;
 
-const SettingsCardTitle = styled.span`
+const SettingsCardTitle = styled.div`
   font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
-const SettingsCardSubtitle = styled.span`
+const SettingsCardSubtitle = styled.div`
   margin-top: 4px;
   font-weight: 300;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: ${GRAY};
+`;
+
+const NowrapContainer = styled.div`
+  flex: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const SettingsCard: React.FC<SettingsCardProps> = ({ link }) => {
   return (
     <SettingsCardWrapper ai="center" jc="space-between">
-      <FlexBox direction="column">
+      <NowrapContainer>
         <SettingsCardTitle>{link.title}</SettingsCardTitle>
         <SettingsCardSubtitle>{link.url}</SettingsCardSubtitle>
-      </FlexBox>
-      <img width={12} src={close} alt="delete" />
+      </NowrapContainer>
+      <img
+        width={12}
+        src={close}
+        alt="delete"
+        style={{ whiteSpace: "nowrap" }}
+      />
     </SettingsCardWrapper>
   );
 };

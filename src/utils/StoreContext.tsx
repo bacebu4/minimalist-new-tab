@@ -2,7 +2,10 @@ import React, { useMemo, useState } from "react";
 import { Link } from "../types";
 
 const allLinks: Link[] = [
-  { url: "https://vk.com/", title: "VK dj hiie" },
+  {
+    url: "https://vk.com/https://vk.com/https://vk.com/https://vk.com/",
+    title: "VK dj hiie vk qw we er rt ty yu ui iu io iu yu io kj hg gf fg",
+  },
   { url: "https://vk.com/", title: "VK2" },
   { url: "https://vk.com/", title: "V3" },
   { url: "https://vk.com/", title: "VK4" },
