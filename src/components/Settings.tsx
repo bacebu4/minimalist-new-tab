@@ -5,6 +5,9 @@ import { FlexBox } from "react-layout-library";
 import settingsButtonImage from "../assets/settingsButtonImage.png";
 import { CloseButton } from "./CloseButton";
 import { GRAY } from "../utils/colors";
+import { SettingsCard } from "./SettingsCard";
+import { BaseButton } from "./BaseButton";
+import { BaseInput } from "./BaseInput";
 
 const customStyles = {
   content: {
@@ -39,9 +42,11 @@ const SettingsTitle = styled.h1`
 `;
 
 const SettingsUppercase = styled.h2`
+  margin-top: 32px;
   color: ${GRAY};
   font-weight: 600;
   text-transform: uppercase;
+  margin-bottom: 16px;
 `;
 
 const SettingsExplanation = styled.p`
@@ -49,6 +54,7 @@ const SettingsExplanation = styled.p`
   font-weight: 400;
   line-height: 1.6rem;
   max-width: 80%;
+  margin-top: 16px;
 `;
 
 export const Settings: React.FC = () => {
@@ -71,8 +77,26 @@ export const Settings: React.FC = () => {
         </FlexBox>
 
         <section>
-          <SettingsUppercase>Important some</SettingsUppercase>
-          <SettingsExplanation>Use it wisely here</SettingsExplanation>
+          <SettingsUppercase>Saved links</SettingsUppercase>
+          <SettingsCard name="VK" />
+          <SettingsCard name="VK" />
+          <SettingsCard name="VK" />
+          <SettingsExplanation>
+            Saved links you see at the main screen
+          </SettingsExplanation>
+        </section>
+
+        <section>
+          <SettingsUppercase>Add new links (max. 6)</SettingsUppercase>
+          <FlexBox mt={16}>
+            <BaseInput placeholder="Title" />
+          </FlexBox>
+          <FlexBox mt={16}>
+            <BaseInput placeholder="URL" />
+          </FlexBox>
+          <FlexBox mt={16}>
+            <BaseButton>Add new one</BaseButton>
+          </FlexBox>
         </section>
       </Modal>
     </>
