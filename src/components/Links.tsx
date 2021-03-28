@@ -1,5 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
-import { Link } from "../types";
+import { StoreContext } from "../utils/StoreContext";
 import { LinkElement } from "./LinkElement";
 
 const LinksContainer = styled.div`
@@ -9,11 +10,9 @@ const LinksContainer = styled.div`
   justify-content: space-around;
 `;
 
-type LinksProps = {
-  links: Link[];
-};
+export const Links: React.FC = () => {
+  const { links } = useContext(StoreContext);
 
-export const Links: React.FC<LinksProps> = ({ links }) => {
   return (
     <LinksContainer>
       {links.map((link) => (
