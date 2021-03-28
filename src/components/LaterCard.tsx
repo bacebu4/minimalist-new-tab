@@ -16,6 +16,11 @@ const LaterCardTitle = withLayoutStyles(styled.h2`
   font-size: 17px;
   font-family: "Sora", sans-serif;
   font-weight: 600;
+
+  cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
 `);
 
 const LaterCardSubtitle = styled.a`
@@ -23,10 +28,6 @@ const LaterCardSubtitle = styled.a`
   font-size: 17px;
 
   text-decoration: none;
-
-  :hover {
-    text-decoration: underline;
-  }
 `;
 
 const Image = styled.img`
