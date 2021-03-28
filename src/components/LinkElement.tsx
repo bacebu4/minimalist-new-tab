@@ -4,7 +4,7 @@ import { Link } from "../types";
 
 function getFaviconPath(url: string): string {
   const splittedUrl = url.split(".");
-  const faviconPath = `http://${splittedUrl[splittedUrl.length - 2]}.${
+  const faviconPath = `${splittedUrl[splittedUrl.length - 2]}.${
     splittedUrl[splittedUrl.length - 1]
   }/favicon.ico`;
   return faviconPath;
@@ -34,19 +34,21 @@ const LinkElementSubtitle = styled.a`
 
 const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
   return (
-    <FlexBox direction="column" className={className}>
-      <FlexBox ai="center" mb={4}>
-        <img
-          width={20}
-          height={20}
-          src={getFaviconPath(link.url)}
-          alt="favicon"
-        />
-        <LinkElementTitle ml={8}>{link.title}</LinkElementTitle>
+    <FlexBox className={className} jc="center" w="160px">
+      <FlexBox direction="column">
+        <FlexBox ai="center" mb={4}>
+          <img
+            width={20}
+            height={20}
+            src={getFaviconPath(link.url)}
+            alt="favicon"
+          />
+          <LinkElementTitle ml={8}>{link.title}</LinkElementTitle>
+        </FlexBox>
+        <LinkElementSubtitle href={`${link.url}`}>
+          {link.url}
+        </LinkElementSubtitle>
       </FlexBox>
-      <LinkElementSubtitle href={`https://${link.url}`}>
-        {link.url}
-      </LinkElementSubtitle>
     </FlexBox>
   );
 };
