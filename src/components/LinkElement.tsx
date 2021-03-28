@@ -1,6 +1,7 @@
 import { FlexBox, withLayoutStyles } from "react-layout-library";
 import styled from "styled-components";
 import { Link } from "../types";
+import { GRAY, LIGHT_GRAY } from "../utils/colors";
 import { openLink } from "../utils/openLink";
 
 function getFaviconPath(url: string): string {
@@ -22,7 +23,7 @@ const LinkElementTitle = withLayoutStyles(styled.h2`
 `);
 
 const LinkElementSubtitle = styled.div`
-  color: #949494;
+  color: ${GRAY};
   font-size: 14px;
   font-weight: 300;
 
@@ -35,7 +36,7 @@ const LinkElementWrapper = styled(FlexBox)`
   cursor: pointer;
 
   :hover {
-    background-color: #fafafa;
+    background-color: ${LIGHT_GRAY};
   }
 `;
 

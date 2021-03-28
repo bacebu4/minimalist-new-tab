@@ -1,6 +1,7 @@
 import { FlexBox, withLayoutStyles } from "react-layout-library";
 import styled from "styled-components";
 import { LaterLink } from "../types";
+import { GRAY, LIGHT_GRAY } from "../utils/colors";
 
 type LaterCardProps = {
   link: LaterLink;
@@ -8,7 +9,7 @@ type LaterCardProps = {
 };
 
 const LaterCardWrapper = styled(FlexBox)`
-  background-color: #fafafa;
+  background-color: ${LIGHT_GRAY};
   border-radius: 21px;
 `;
 
@@ -24,7 +25,7 @@ const LaterCardTitle = withLayoutStyles(styled.h2`
 `);
 
 const LaterCardSubtitle = styled.a`
-  color: #949494;
+  color: ${GRAY};
   font-size: 17px;
 
   text-decoration: none;

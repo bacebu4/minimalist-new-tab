@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { format } from "date-fns";
+import { GRAY } from "../utils/colors";
 
 const TimeTitle = styled.h1`
   font-size: 44px;
@@ -9,7 +10,7 @@ const TimeTitle = styled.h1`
 
 const DateSubtitle = styled.h2`
   margin-top: 24px;
-  color: #949494;
+  color: ${GRAY};
   font-size: 24px;
   font-weight: 300;
 `;

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FlexBox } from "react-layout-library";
 import settingsButtonImage from "../assets/settingsButtonImage.png";
 import { CloseButton } from "./CloseButton";
+import { GRAY } from "../utils/colors";
 
 const customStyles = {
   content: {
@@ -38,13 +39,13 @@ const SettingsTitle = styled.h1`
 `;
 
 const SettingsUppercase = styled.h2`
-  color: #949494;
+  color: ${GRAY};
   font-weight: 600;
   text-transform: uppercase;
 `;
 
 const SettingsExplanation = styled.p`
-  color: #949494;
+  color: ${GRAY};
   font-weight: 400;
   line-height: 1.6rem;
   max-width: 80%;
