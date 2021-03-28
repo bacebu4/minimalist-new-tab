@@ -1,6 +1,7 @@
 import { FlexBox, withLayoutStyles } from "react-layout-library";
 import styled from "styled-components";
 import { Link } from "../types";
+import { openLink } from "../utils/openLink";
 
 function getFaviconPath(url: string): string {
   const splittedUrl = url.split(".");
@@ -39,10 +40,6 @@ const LinkElementWrapper = styled(FlexBox)`
 `;
 
 const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
-  function openLink(url: string) {
-    window.open(url, "_self");
-  }
-
   return (
     <LinkElementWrapper
       className={className}
