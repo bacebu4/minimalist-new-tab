@@ -101,9 +101,9 @@ export const Settings: React.FC = () => {
             <SettingsUppercase>Saved links</SettingsUppercase>
             <Switch />
           </FlexBox>
-          <SettingsCard name="VK" />
-          <SettingsCard name="VK" />
-          <SettingsCard name="VK" />
+          <SettingsCard link={{ url: "https://vk.com/", title: "VK4" }} />
+          <SettingsCard link={{ url: "https://vk.com/", title: "VK4" }} />
+          <SettingsCard link={{ url: "https://vk.com/", title: "VK4" }} />
           <SettingsExplanation>
             Saved links you see at the main screen
           </SettingsExplanation>
