@@ -20,21 +20,36 @@ const LinkElementTitle = withLayoutStyles(styled.h2`
   font-family: "Sora", sans-serif;
 `);
 
-const LinkElementSubtitle = styled.a`
+const LinkElementSubtitle = styled.div`
   color: #949494;
   font-size: 14px;
   font-weight: 300;
 
   text-decoration: none;
+`;
+
+const LinkElementWrapper = styled(FlexBox)`
+  padding: 12px;
+  border-radius: 15px;
+  cursor: pointer;
 
   :hover {
-    text-decoration: underline;
+    background-color: #fafafa;
   }
 `;
 
 const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
+  function openLink(url: string) {
+    window.open(url, "_self");
+  }
+
   return (
-    <FlexBox className={className} jc="center" w="160px">
+    <LinkElementWrapper
+      className={className}
+      jc="center"
+      w="160px"
+      onClick={() => openLink(link.url)}
+    >
       <FlexBox direction="column">
         <FlexBox ai="center" mb={4}>
           <img
@@ -45,11 +60,9 @@ const LinkElementLayout: React.FC<LinkElementProps> = ({ link, className }) => {
           />
           <LinkElementTitle ml={8}>{link.title}</LinkElementTitle>
         </FlexBox>
-        <LinkElementSubtitle href={`${link.url}`}>
-          {link.url}
-        </LinkElementSubtitle>
+        <LinkElementSubtitle>{link.url}</LinkElementSubtitle>
       </FlexBox>
-    </FlexBox>
+    </LinkElementWrapper>
   );
 };
 
