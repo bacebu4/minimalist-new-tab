@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Modal from "react-modal";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FlexBox } from "react-layout-library";
 import settingsButtonImage from "../assets/settingsButtonImage.png";
 import { CloseButton } from "./CloseButton";
@@ -9,6 +9,8 @@ import { SettingsCard } from "./SettingsCard";
 import { BaseButton } from "./BaseButton";
 import { BaseInput } from "./BaseInput";
 import { Switch } from "./Switch";
+import { Link } from "../types";
+import { StoreContext } from "../utils/StoreContext";
 
 const customStyles = {
   content: {
@@ -61,6 +63,22 @@ const Section = styled.section`
 
 export const Settings: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [link, setLink] = useState<Link>({ title: "", url: "" });
+  const { links, setLinks } = useContext(StoreContext);
+
+  function handleUrlChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setLink({ ...link, url: event.target.value });
+  }
+
+  function handleTitleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setLink({ ...link, title: event.target.value });
+  }
+
+  function submitNewLink() {
+    setLinks([...links, { ...link }]);
+    setLink({ title: "", url: "" });
+  }
+
   return (
     <>
       <SettingsButton
@@ -94,13 +112,21 @@ export const Settings: React.FC = () => {
         <Section>
           <SettingsUppercase>Add new links (max. 6)</SettingsUppercase>
           <FlexBox mt={16}>
-            <BaseInput placeholder="Title" />
+            <BaseInput
+              placeholder="Title"
+              value={link.title}
+              onChange={handleTitleChange}
+            />
           </FlexBox>
           <FlexBox mt={16}>
-            <BaseInput placeholder="URL" />
+            <BaseInput
+              placeholder="URL"
+              value={link.url}
+              onChange={handleUrlChange}
+            />
           </FlexBox>
           <FlexBox mt={16}>
-            <BaseButton>Add new one</BaseButton>
+            <BaseButton onClick={submitNewLink}>Add new one</BaseButton>
           </FlexBox>
         </Section>
 
