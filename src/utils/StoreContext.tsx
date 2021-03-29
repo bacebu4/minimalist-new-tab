@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "../types";
+import { LINKS_KEY } from "./variables";
 
 const noop = () => {
   return undefined;
@@ -28,7 +29,7 @@ export const StoreContextProvider: React.FC = ({ children }) => {
 
   useEffect(function getLinksFromLocalStorage() {
     const linksFromLocalStorage = JSON.parse(
-      localStorage.getItem("mnt-links") || "[]"
+      localStorage.getItem(LINKS_KEY) || "[]"
     ) as Link[];
 
     setLinks(linksFromLocalStorage);
@@ -36,7 +37,7 @@ export const StoreContextProvider: React.FC = ({ children }) => {
 
   useEffect(
     function saveLinksToLocalStorage() {
-      localStorage.setItem("mnt-links", JSON.stringify(links));
+      localStorage.setItem(LINKS_KEY, JSON.stringify(links));
     },
     [links]
   );
