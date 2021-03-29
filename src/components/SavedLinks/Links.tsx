@@ -3,21 +3,21 @@ import styled from "styled-components";
 import { StoreContext } from "../../utils/StoreContext";
 import { LinkElement } from "./components/LinkElement";
 
-const SavedLinksContainer = styled.div`
+const LinksContainer = styled.div`
   width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 `;
 
-export const SavedLinks: React.FC = () => {
+export const Links: React.FC = () => {
   const { links } = useContext(StoreContext);
 
   return (
-    <SavedLinksContainer>
+    <LinksContainer>
       {links.map((link) => (
         <LinkElement mt={32} link={link} key={link.id} />
       ))}
-    </SavedLinksContainer>
+    </LinksContainer>
   );
 };
