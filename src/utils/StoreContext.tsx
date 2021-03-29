@@ -3,12 +3,13 @@ import { Link } from "../types";
 
 const allLinks: Link[] = [
   {
+    id: "1",
     url: "https://vk.com/https://vk.com/https://vk.com/https://vk.com/",
     title: "VK dj hiie vk qw we er rt ty yu ui iu io iu yu io kj hg gf fg",
   },
-  { url: "https://vk.com/", title: "VK2" },
-  { url: "https://vk.com/", title: "V3" },
-  { url: "https://vk.com/", title: "VK4" },
+  { id: "2", url: "https://vk.com/", title: "VK2" },
+  { id: "3", url: "https://vk.com/", title: "V3" },
+  { id: "4", url: "https://vk.com/", title: "VK4" },
   // { url: "https://vk.com/", title: "V" },
   // { url: "https://vk.com/", title: "VK" },
 ];

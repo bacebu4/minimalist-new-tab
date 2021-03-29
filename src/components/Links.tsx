@@ -16,7 +16,7 @@ export const Links: React.FC = () => {
   return (
     <LinksContainer>
       {links.map((link) => (
-        <LinkElement mt={32} link={link} key={link.title} />
+        <LinkElement mt={32} link={link} key={link.id} />
       ))}
     </LinksContainer>
   );

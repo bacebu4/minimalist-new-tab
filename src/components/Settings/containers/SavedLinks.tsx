@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { FlexBox } from "react-layout-library";
+import { v4 as uuidv4 } from "uuid";
 import { Link } from "../../../types";
 import { StoreContext } from "../../../utils/StoreContext";
 import { BaseButton } from "../../BaseButton";
@@ -11,7 +12,7 @@ import { SettingsExplanation } from "../components/SettingsExplanation";
 import { SettingsUppercase } from "../components/SettingsUppercase";
 
 export const SavedLinks: React.FC = () => {
-  const [link, setLink] = useState<Link>({ title: "", url: "" });
+  const [link, setLink] = useState<Link>({ id: uuidv4(), title: "", url: "" });
   const { links, setLinks } = useContext(StoreContext);
 
   function handleUrlChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -24,8 +25,9 @@ export const SavedLinks: React.FC = () => {
 
   function submitNewLink() {
     setLinks([...links, { ...link }]);
-    setLink({ title: "", url: "" });
+    setLink({ id: uuidv4(), title: "", url: "" });
   }
+
   return (
     <>
       <Section>
@@ -34,7 +36,7 @@ export const SavedLinks: React.FC = () => {
           <Switch />
         </FlexBox>
         {links.map((linkEl) => (
-          <SettingsCard link={linkEl} key={linkEl.title} />
+          <SettingsCard link={linkEl} key={linkEl.id} />
         ))}
         <SettingsExplanation>
           Saved links you see at the main screen
