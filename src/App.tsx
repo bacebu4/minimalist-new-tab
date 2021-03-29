@@ -1,7 +1,7 @@
 import { FlexBox } from "react-layout-library";
 import { Laters } from "./components/Laters";
 import { Links } from "./components/Links";
-import { Settings } from "./components/Settings";
+import { Settings } from "./components/Settings/Settings";
 import { Time } from "./components/Time";
 import { Weather } from "./components/Weather";
 import { StoreContextProvider } from "./utils/StoreContext";

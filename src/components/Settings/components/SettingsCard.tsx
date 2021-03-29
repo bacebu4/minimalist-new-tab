@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { FlexBox } from "react-layout-library";
-import { GRAY } from "../utils/colors";
-import close from "../assets/close.svg";
-import { Link } from "../types";
+import { GRAY } from "../../../utils/colors";
+import close from "../../../assets/close.svg";
+import { Link } from "../../../types";
 
 type SettingsCardProps = {
   link: Link;
