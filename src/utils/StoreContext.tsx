@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "../types";
 
 const allLinks: Link[] = [
@@ -37,6 +37,21 @@ export const StoreContextProvider: React.FC = ({ children }) => {
       setLinks,
     }),
     [links, setLinks]
+  );
+
+  useEffect(function getLinksFromLocalStorage() {
+    const linksFromLocalStorage = JSON.parse(
+      localStorage.getItem("mnt-links") || "[]"
+    ) as Link[];
+
+    setLinks(linksFromLocalStorage);
+  }, []);
+
+  useEffect(
+    function saveLinksToLocalStorage() {
+      localStorage.setItem("mnt-links", JSON.stringify(links));
+    },
+    [links]
   );
 
   return (
