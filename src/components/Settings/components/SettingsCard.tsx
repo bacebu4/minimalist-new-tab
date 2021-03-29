@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { FlexBox } from "react-layout-library";
+import { useContext } from "react";
 import { GRAY } from "../../../utils/colors";
 import close from "../../../assets/close.svg";
 import { Link } from "../../../types";
+import { StoreContext } from "../../../utils/StoreContext";
 
 type SettingsCardProps = {
   link: Link;
@@ -11,7 +13,6 @@ type SettingsCardProps = {
 const SettingsCardWrapper = styled(FlexBox)`
   padding: 12px 16px;
   border-radius: 9px;
-  cursor: pointer;
 
   &:hover {
     background-color: ${GRAY}1a;
@@ -45,18 +46,21 @@ const NowrapContainer = styled.div`
 `;
 
 export const SettingsCard: React.FC<SettingsCardProps> = ({ link }) => {
+  const { deleteLink } = useContext(StoreContext);
+
   return (
     <SettingsCardWrapper ai="center" jc="space-between">
       <NowrapContainer>
         <SettingsCardTitle>{link.title}</SettingsCardTitle>
         <SettingsCardSubtitle>{link.url}</SettingsCardSubtitle>
       </NowrapContainer>
-      <img
-        width={12}
-        src={close}
-        alt="delete"
+      <button
+        type="button"
+        onClick={() => deleteLink(link.id)}
         style={{ whiteSpace: "nowrap" }}
-      />
+      >
+        <img width={12} src={close} alt="delete" />
+      </button>
     </SettingsCardWrapper>
   );
 };
