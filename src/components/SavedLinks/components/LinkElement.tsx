@@ -1,16 +1,9 @@
 import { FlexBox, withLayoutStyles } from "react-layout-library";
 import styled from "styled-components";
-import { Link } from "../types";
-import { GRAY, LIGHT_GRAY } from "../utils/colors";
-import { openLink } from "../utils/openLink";
-
-function getFaviconPath(url: string): string {
-  const splittedUrl = url.split(".");
-  const faviconPath = `${splittedUrl[splittedUrl.length - 2]}.${
-    splittedUrl[splittedUrl.length - 1]
-  }/favicon.ico`;
-  return faviconPath;
-}
+import { Link } from "../../../types";
+import { GRAY, LIGHT_GRAY } from "../../../utils/colors";
+import { openLink } from "../../../utils/openLink";
+import { getFaviconPath } from "../utils/getFaviconPath";
 
 type LinkElementProps = {
   link: Link;

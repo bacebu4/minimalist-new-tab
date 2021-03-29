@@ -5,7 +5,7 @@ import styled from "styled-components";
 import settingsButtonImage from "../../assets/settingsButtonImage.png";
 import { CloseButton } from "./components/CloseButton";
 import { PocketIntegration } from "./containers/PocketIntegration";
-import { SavedLinks } from "./containers/SavedLinks";
+import { LinksIntegration } from "./containers/LinksIntegration";
 import { WeatherIntegration } from "./containers/WeatherIntegration";
 
 const customStyles = {
@@ -60,7 +60,7 @@ export const Settings: React.FC = () => {
           <CloseButton onClick={() => setIsOpen(false)} />
         </FlexBox>
 
-        <SavedLinks />
+        <LinksIntegration />
 
         <WeatherIntegration />
 

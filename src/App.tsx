@@ -1,6 +1,6 @@
 import { FlexBox } from "react-layout-library";
 import { Laters } from "./components/Laters";
-import { Links } from "./components/Links";
+import { SavedLinks } from "./components/SavedLinks/SavedLinks";
 import { Settings } from "./components/Settings/Settings";
 import { Time } from "./components/Time";
 import { Weather } from "./components/Weather";
@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
       <FlexBox jc="center" ai="center" h="100vh" direction="column">
         <Time />
-        <Links />
+        <SavedLinks />
         <Laters mt={32} />
       </FlexBox>
     </StoreContextProvider>

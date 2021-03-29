@@ -11,7 +11,7 @@ import { SettingsCard } from "../components/SettingsCard";
 import { SettingsExplanation } from "../components/SettingsExplanation";
 import { SettingsUppercase } from "../components/SettingsUppercase";
 
-export const SavedLinks: React.FC = () => {
+export const LinksIntegration: React.FC = () => {
   const [link, setLink] = useState<Link>({ id: uuidv4(), title: "", url: "" });
   const { links, setLinks } = useContext(StoreContext);
 
